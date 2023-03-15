@@ -41,6 +41,14 @@ public class Movement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         _rigidbody.velocity = new Vector3(x * _speed, _rigidbody.velocity.y, z * _speed);
+        if (Input.GetKey(KeyCode.Q))
+        {
+            gameObject.transform.Rotate(0, -0.1f, 0);
+        }
+        else if (Input.GetKey(KeyCode.E))
+        {
+            gameObject.transform.Rotate(0, 0.1f, 0);
+        }
 
     }
 
