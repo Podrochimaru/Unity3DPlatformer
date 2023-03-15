@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
@@ -12,20 +13,17 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
         _onGround = true;
-
     }
     private void OnCollisionExit(Collision collision)
     {
-
         _onGround = false;
-
     }
     void Update()
     {
         PlayJump();
         PlayerMove();
+        MidAir();
     }
     private void PlayJump()
     {
@@ -37,7 +35,6 @@ public class Movement : MonoBehaviour
 
     private void PlayerMove()
     {
-        
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         _rigidbody.velocity = new Vector3(x * _speed, _rigidbody.velocity.y, z * _speed);
@@ -49,7 +46,13 @@ public class Movement : MonoBehaviour
         {
             gameObject.transform.Rotate(0, 0.1f, 0);
         }
-
+    }
+    private void MidAir()
+    {
+        if (_onGround == false && gameObject.transform.position.y < -30f)
+        {
+            gameObject.transform.position = new Vector3(-0.85f, 4f, -4.7f);
+        }
     }
 
 }
