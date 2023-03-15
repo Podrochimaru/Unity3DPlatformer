@@ -10012,3 +10012,4 @@ Library/Artifacts/00/0000aa5e666308ebf2bee6a97bc05fbd
 Library/ArtifactDB-lock
 Library/ArtifactDB
 Library/APIUpdater/project-dependencies.graph
+*.log
