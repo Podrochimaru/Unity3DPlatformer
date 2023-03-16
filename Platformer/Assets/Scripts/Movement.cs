@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _jumpPower;
     [SerializeField] private float _speed;
+    public bool IsBoosted = false;
     private bool _onGround = true;
 
     private void OnCollisionEnter(Collision collision)
@@ -27,9 +28,13 @@ public class Movement : MonoBehaviour
     }
     private void PlayJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _onGround)
+        if (Input.GetKeyDown(KeyCode.Space) && _onGround && IsBoosted == false)
         {
             _rigidbody.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && _onGround && IsBoosted == true)
+        {
+            _rigidbody.AddForce(Vector3.up * 10, ForceMode.Impulse);
         }
     }
 
@@ -49,7 +54,7 @@ public class Movement : MonoBehaviour
     }
     private void MidAir()
     {
-        if (_onGround == false && gameObject.transform.position.y < -30f)
+        if (_onGround == false && gameObject.transform.position.y < -20f)
         {
             gameObject.transform.position = new Vector3(-0.85f, 4f, -4.7f);
         }
