@@ -701,7 +701,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level1Counter: 0
-  _animator: {fileID: 0}
+  _animator: {fileID: 1793781451}
+  _animator2: {fileID: 1823074255}
 --- !u!1001 &1471655621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1391,6 +1392,10 @@ PrefabInstance:
     - target: {fileID: 5487216068401645100, guid: dbecef4aa7f89ad448dea05b9c5c66ee, type: 3}
       propertyPath: _speed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487216068401645100, guid: dbecef4aa7f89ad448dea05b9c5c66ee, type: 3}
+      propertyPath: IsBoosted
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5487216068401645100, guid: dbecef4aa7f89ad448dea05b9c5c66ee, type: 3}
       propertyPath: _jumpPower

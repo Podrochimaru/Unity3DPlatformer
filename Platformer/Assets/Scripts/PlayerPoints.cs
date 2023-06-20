@@ -6,6 +6,7 @@ public class PlayerPoints : MonoBehaviour
 {
     public int Level1Counter = 0;
     [SerializeField] private Animator _animator;
+    [SerializeField] private Animator _animator2;
 
     private void Update()
     {
@@ -16,6 +17,8 @@ public class PlayerPoints : MonoBehaviour
         if (Level1Counter >= 2)
         {
             _animator.Play("Door");
+            _animator2.Play("Door3");
+            
         }
     }
     
