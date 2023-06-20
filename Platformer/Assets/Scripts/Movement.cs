@@ -35,6 +35,7 @@ public class Movement : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Space) && _onGround && IsBoosted == true)
         {
             _rigidbody.AddForce(Vector3.up * 10, ForceMode.Impulse);
+            IsBoosted = false;
         }
     }
 
