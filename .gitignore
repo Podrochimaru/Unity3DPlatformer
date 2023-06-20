@@ -10014,3 +10014,4 @@ Library/ArtifactDB
 Library/APIUpdater/project-dependencies.graph
 *.log
 Platformer/UserSettings/Layouts/default-2021.dwlt
+*.vsidx
