@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
+    [SerializeField] private string _sceneName;
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene(_sceneName);
     }
 }
