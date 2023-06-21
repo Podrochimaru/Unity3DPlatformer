@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _jumpPower;
     [SerializeField] private float _speed;
+    [SerializeField] private Transform _startPoint;
     public bool IsBoosted = false;
     private bool _onGround = true;
 
@@ -57,7 +58,8 @@ public class Movement : MonoBehaviour
     {
         if (_onGround == false && gameObject.transform.position.y < -20f)
         {
-            gameObject.transform.position = new Vector3(-0.85f, 4f, -4.7f);
+            _rigidbody.velocity = Vector3.zero;
+            gameObject.transform.position = _startPoint.position;
         }
     }
 
