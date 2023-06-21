@@ -9,6 +9,6 @@ public class FrontTrampoline : MonoBehaviour
     {
         _player.velocity = Vector3.zero;
         _player.AddForce(new Vector3(_player.velocity.x, 20, 0), ForceMode.Impulse);
-        _player.AddForce(new Vector3(_player.velocity.x, 0, 2000), ForceMode.Impulse);
+        _player.AddForce(new Vector3(_player.velocity.x, 0, 2010), ForceMode.Impulse);
     }
 }

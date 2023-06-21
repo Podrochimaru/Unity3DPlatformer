@@ -8,10 +8,10 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _jumpPower;
-    [SerializeField] private float _speed;
     [SerializeField] private Transform _startPoint;
+    public float Speed;
     public bool IsBoosted = false;
-    private bool _onGround = true;
+    private bool _onGround = false;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -42,9 +42,9 @@ public class Movement : MonoBehaviour
 
     private void PlayerMove()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        _rigidbody.velocity = new Vector3(x * _speed, _rigidbody.velocity.y, z * _speed);
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
+        _rigidbody.velocity = new Vector3(x * Speed, _rigidbody.velocity.y, z * Speed);
         if (Input.GetKey(KeyCode.Q))
         {
             gameObject.transform.Rotate(0, -0.1f, 0);
